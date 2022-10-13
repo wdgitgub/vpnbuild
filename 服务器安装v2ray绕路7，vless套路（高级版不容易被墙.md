@@ -59,6 +59,9 @@ sudo -i
   - https://blog.csdn.net/hello_1995/article/details/109222650
 ## 2.安装依赖，
 如果是debian或ubuntu系统则执行：
+
+
+
 ```
 apt-get update && apt-get -y install socat
 ```
@@ -70,7 +73,7 @@ yum update && yum -y install socat
 ```
 
 
-- 用安装acme脚本申请证书套路
+用安装acme脚本申请证书套路
 # 用[acme.sh安装证书套路](acme.sh安装证书套路.md)
 
 # 用[复制转换证书套路](复制转换证书套路.md)
