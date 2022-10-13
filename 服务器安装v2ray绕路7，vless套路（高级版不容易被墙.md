@@ -132,15 +132,18 @@ tar -zxvf /usr/local/src/openssl-1.1.1.tar.gz -C /usr/local/src
 apt -y install build-essential libpcre3 libpcre3-dev zlib1g-dev git dbus manpages-dev aptitude g++
 ```
 
-- 如果是centos执行：
+如果是centos执行：
+
+
+
+
 ```
 yum -y groupinstall "Development tools"
-
+```
 
 
 ```
 yum -y install pcre pcre-devel zlib-devel epel-release gcc gcc-c++
-
 ```
 
 
