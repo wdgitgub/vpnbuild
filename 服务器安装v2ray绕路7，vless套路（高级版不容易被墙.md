@@ -136,7 +136,6 @@ apt -y install build-essential libpcre3 libpcre3-dev zlib1g-dev git dbus manpage
 ```
 yum -y groupinstall "Development tools"
 
-```
 
 
 ```
