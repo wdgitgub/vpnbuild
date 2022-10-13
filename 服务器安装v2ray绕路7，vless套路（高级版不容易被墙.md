@@ -61,7 +61,6 @@ sudo -i
 如果是debian或ubuntu系统则执行：
 ```
 apt-get update && apt-get -y install socat
-
 ```
 
 
