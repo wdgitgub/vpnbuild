@@ -115,9 +115,9 @@ wget -nc --no-check-certificate https://www.openssl.org/source/openssl-1.1.1.tar
 	  - ![image.png](../assets/image_1630128978195_0.png)
 	
 	如果出现错误提示（不复制）
-```
+
 wget：command not found 
-```
+
 
 就说明找不到 wget 命令
 那么就输入
@@ -140,17 +140,24 @@ tar -zxvf /usr/local/src/openssl-1.1.1.tar.gz -C /usr/local/src
 -  ![image.png](../assets/image_1630128993554_0.png)
 		
 #### 安装其他依赖
-- 如果是debian和ubuntu执行下面语句：
+如果是debian和ubuntu执行下面语句：
+
 
 ```
 apt -y install build-essential libpcre3 libpcre3-dev zlib1g-dev git dbus manpages-dev aptitude g++
 ```
 
-- 如果是centos执行：
-```
-yum -y groupinstall "Development tools"
+
+
+0
+
+
+如果是centos执行：
 
 ```
+yum -y groupinstall "Development tools"
+```
+
 
 
 ```
