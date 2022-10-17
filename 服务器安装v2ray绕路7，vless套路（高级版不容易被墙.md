@@ -1,62 +1,61 @@
-- 教学视频
-- https://www.youtube.com/watch?v=SYAuvtF9wMY
-- https://meta-tube.de/videos/watch/923f8cc5-e0e7-4a1a-816d-7fe04e02bbda
--
--
-- 一键脚本 和安卓配置 教学视频
-- Q:\OD同步\OneDrive - Business\软件\IT软件\翻墙搭建视频\vless搭建视频\jennie的vless手动搭建视频
--
-- https://www.youtube.com/watch?v=PvM6Xw6ocDk
-- jennie的图文教程链接
-- Q:\OD同步\OneDrive - Business\软件\IT软件\翻墙搭建视频\vless搭建视频\jennie的vless手动搭建视频\jennie的说明网页
--
--
-- https://jeanniestudio.top/2020/08/24/%E6%89%8B%E5%8A%A8%E6%90%AD%E5%BB%BAvless+tcp+tls/
--
--
-- 安装完使用后问题1断联故障排查套路
-	- 先ping一下IP地址 域名
-	- 关闭clouldflare（这个是上不了网的主要原因）
-	- xshell打开服务器
-		- 重启nginx
-			- systemctl restart nginx
-	- 本地V2RAY
-		- 首选项 连接设置
-		- 使用本地DNS 关闭
-		- 绕过中国大陆 关闭
-		- 绕过中国大陆 重新打开
--
--
-- 准备VPS 准备域名 绑定这个域名到VPS
--
--
--
-- 前言
-- v2ray的官网转移到了https://www.v2fly.org/，而且添加了新的传输协议：vless,VLESS 是一个无状态的轻量传输协议，它分为入站和出站两部分，可以作为 V2Ray 客户端和服务器之间的桥梁。
-- vmess和vless的区别
-- vless与VMess 不同，VLESS 不依赖于系统时间，认证方式同样为 UUID，但不需要 alterId。
-- 官方附加说明：尽管 Websocket+TLS+Web 可能称得上是现阶段最好的方案，但绝对不是推荐新手一上来就尝试的方案，更不是 V2Ray 唯一的用法。同时，你应当了解，每个地区的网络状况不同 (主要指对不同协议的 QoS 程度)，你可以将所有配置都尝试一遍来寻找最适合自己的，尽量少问、最好不问“为什么我的 V2Ray 这么慢？”这样的问题。
--
--
-- 准备条件：
-- 1.一个vps，我使用谷歌云演示
-- 2.一个域名（不会申请域名的小伙伴可以看这个视频：）,域名和vps的ip地址关联成功
-- 3域名解析到了服务器
-- 4域名托管到了cloudflare
--
-- 安装步骤
-- 用funal shell连接主机
-- 或 XSHELL连接主机
-- 申请证书
+教学视频
+
+https://www.youtube.com/watch?v=SYAuvtF9wMY
+https://meta-tube.de/videos/watch/923f8cc5-e0e7-4a1a-816d-7fe04e02bbda
+
+
+一键脚本 和安卓配置 教学视频
+Q:\OD同步\OneDrive - Business\软件\IT软件\翻墙搭建视频\vless搭建视频\jennie的vless手动搭建视频
+
+https://www.youtube.com/watch?v=PvM6Xw6ocDk
+jennie的图文教程链接
+Q:\OD同步\OneDrive - Business\软件\IT软件\翻墙搭建视频\vless搭建视频\jennie的vless手动搭建视频\jennie的说明网页
+
+
+https://jeanniestudio.top/2020/08/24/%E6%89%8B%E5%8A%A8%E6%90%AD%E5%BB%BAvless+tcp+tls/
+
+
+安装完使用后问题1断联故障排查套路
+先ping一下IP地址 域名
+关闭clouldflare（这个是上不了网的主要原因）
+shell打开服务器
+重启nginx
+systemctl restart nginx
+本地V2RAY
+首选项 连接设置
+使用本地DNS 关闭
+绕过中国大陆 关闭
+绕过中国大陆 重新打开
+
+
+准备VPS 准备域名 绑定这个域名到VPS
+
+前言
+v2ray的官网转移到了https://www.v2fly.org/，而且添加了新的传输协议：vless,VLESS 是一个无状态的轻量传输协议，它分为入站和出站两部分，可以作为 V2Ray 客户端和服务器之间的桥梁。
+vmess和vless的区别
+vless与VMess 不同，VLESS 不依赖于系统时间，认证方式同样为 UUID，但不需要 alterId。
+官方附加说明：尽管 Websocket+TLS+Web 可能称得上是现阶段最好的方案，但绝对不是推荐新手一上来就尝试的方案，更不是 V2Ray 唯一的用法。同时，你应当了解，每个地区的网络状况不同 (主要指对不同协议的 QoS 程度)，你可以将所有配置都尝试一遍来寻找最适合自己的，尽量少问、最好不问“为什么我的 V2Ray 这么慢？”这样的问题。
+
+
+准备条件：
+1.一个vps，我使用谷歌云演示
+2.一个域名（不会申请域名的小伙伴可以看这个视频：）,域名和vps的ip地址关联成功
+3域名解析到了服务器
+4域名托管到了cloudflare
+
+安装步骤
+用funal shell连接主机
+或 XSHELL连接主机
+申请证书
 # 一、安装acme.sh脚本
 ## 1. 先切换到 root
 ```
 sudo -i
 ```
 
-- 如果出现错误sudo：command not found
-- 就说明没有这个命令，那么就安装sudo命令
-  - https://blog.csdn.net/hello_1995/article/details/109222650
+如果出现错误sudo：command not found
+就说明没有这个命令，那么就安装sudo命令
+https://blog.csdn.net/hello_1995/article/details/109222650
 ## 2.安装依赖
 如果是debian或ubuntu系统则执行：
 
@@ -93,8 +92,8 @@ yum update && yum -y install socat
 # 用[复制转换证书套路](复制转换证书套路.md)
 
 # 安装nginx套路
-- 安装nginx（这里开始 在jennie那个页面复制 jennie的图文教程链接 https://jeanniestudio.top/2020/08/24/%E6%89%8B%E5%8A%A8%E6%90%AD%E5%BB%BAvless+tcp+tls/）
-- 1.安装依赖包
+安装nginx（这里开始 在jennie那个页面复制 jennie的图文教程链接 https://jeanniestudio.top/2020/08/24/%E6%89%8B%E5%8A%A8%E6%90%AD%E5%BB%BAvless+tcp+tls/）
+1.安装依赖包
 ## 下载然后安装 openssl-1.1.1
 （使 nginx 支持TLS 1.3）
 
@@ -111,10 +110,9 @@ wget -nc --no-check-certificate https://www.openssl.org/source/openssl-1.1.1.tar
 ```
 
 
-- 已经下载到 /user/local/src 下面了
-	  - ![image.png](../assets/image_1630128978195_0.png)
-	
-	如果出现错误提示（不复制）
+已经下载到 /user/local/src 下面了
+
+如果出现错误提示（不复制）
 
 wget：command not found 
 
@@ -136,12 +134,11 @@ Y
 ```
 tar -zxvf /usr/local/src/openssl-1.1.1.tar.gz -C /usr/local/src
 ```
-	
--  ![image.png](../assets/image_1630128993554_0.png)
-		
+
+
+
 #### 安装其他依赖
 如果是debian和ubuntu执行下面语句：
-
 
 ```
 apt -y install build-essential libpcre3 libpcre3-dev zlib1g-dev git dbus manpages-dev aptitude g++
@@ -152,7 +149,10 @@ apt -y install build-essential libpcre3 libpcre3-dev zlib1g-dev git dbus manpage
 0
 
 
+
 如果是centos执行：
+
+
 
 ```
 yum -y groupinstall "Development tools"
@@ -167,20 +167,21 @@ yum -y install pcre pcre-devel zlib-devel epel-release gcc gcc-c++
 
 
 
+
 ## 2.下载解压nginx源码
 ```
 wget -nc --no-check-certificate http://nginx.org/download/nginx-1.18.0.tar.gz -P /usr/local/src
 ```
 
 
- - 解压 nginx 源码
+ 解压 nginx 源码
 ```
 tar -zxvf /usr/local/src/nginx-1.18.0.tar.gz -C /usr/local/src
 ```
 
 
-  - 解压完出现一个 nginx 文件夹
-		- ![image.png](../assets/image_1630129014194_0.png)
+解压完出现一个 nginx 文件夹
+
 ## 3.编译和安装nginx
 #### 先进入cd /usr/local/src/nginx-1.18.0这个目录
 注意：这个目录是安装包所在的目录，安装过程一直要在安装包所在目录里操作
@@ -191,7 +192,7 @@ cd /usr/local/src/nginx-1.18.0
 
 
 	
-   - ![image.png](../assets/image_1630129022297_0.png)
+
 #### 再创建一个mkdir /etc/nginx文件夹
  ```
  mkdir /etc/nginx
@@ -318,9 +319,8 @@ server {
 
 
 自动修改法
-- 
-- 注意：将下面代码中的端口号、域名和伪装网站目录修改成你自己的
-	- （注意;证书位置不对）
+
+注意：将下面代码中的端口号、域名和伪装网站目录修改成你自己的（注意;证书位置不对）
 	
 ```
 		cat >/etc/nginx/conf/conf.d/default.conf <<EOF
@@ -340,9 +340,9 @@ server {
 			}
 		EOF
 ```
- - 记下来我定义的端口比如6443（6443可以随便定义成其他数字只要不是443就行），这个是nginx的监听端口
- - 改好以后例如：
-	 - ![image.png](../assets/image_1630129071978_0.png)
+ 记下来我定义的端口比如6443（6443可以随便定义成其他数字只要不是443就行），这个是nginx的监听端口
+ 改好以后例如：
+
 	
 	
 ```
@@ -365,14 +365,6 @@ server {
 ```
 	
 
-
-- ![image.png](../assets/image_1630129093444_0.png)
--
-- ![image.png](../assets/image_1630129108455_0.png)
--
--
--
--
 ## 4.创建并配置nginx.service文件
 手动创建
 ```
@@ -400,7 +392,7 @@ WantedBy=multi-user.target
 
 
 或自动创建
-- 创建服务文件
+创建服务文件
 ```
 		cat >/etc/systemd/system/nginx.service <<EOF
 		[Unit]
@@ -419,17 +411,9 @@ WantedBy=multi-user.target
 ```
 	
 
- - ![image.png](../assets/image_1630129120286_0.png)
-	
- - ![image.png](../assets/image_1630129129474_0.png)
-	-
-	-
--
--
--
--
-- ctril + c退出编辑界面或者
-- 退出finalshell 再进入
+
+ctril + c退出编辑界面或者
+退出finalshell 再进入
 
 
 ## 加载并启动nginx
@@ -457,11 +441,11 @@ systemctl status nginx
 ```
 
 
-- 然后按住ctril +c可以退出状态查看页
+然后按住ctril +c可以退出状态查看页
 
 
-- 其他命令
-- 启动
+其他命令
+启动
 ```
 systemctl start nginx
 ```
@@ -469,27 +453,23 @@ systemctl start nginx
 
 
 
-- 停止
+停止
 ```
 systemctl stop nginx
 ```
 
 
 
-- 假如nginx启动失败怎么弄，出现Failed to start The NGINX HTTP and reverse proxy server怎么办
-		-
-		- ![image.png](../assets/image_1630129150453_0.png)
-		- 用
-			- [nginx启动失败的拯救套路](nginx启动失败的拯救套路.md)
-			- nginx启动失败 拯救套路
--
--
--
--
--
--
--
--
+假如nginx启动失败怎么弄，出现Failed to start The NGINX HTTP and reverse proxy server怎么办
+
+用
+[nginx启动失败的拯救套路](nginx启动失败的拯救套路.md)
+nginx启动失败 拯救套路
+
+
+
+
+
 # 安装伪装网站
 #### 创建伪装网站目录
 ```
@@ -506,21 +486,21 @@ cd /root
 ```
 git clone https://github.com/JeannieStudio/Programming.git /usr/wwwroot
 ```
-  - 如果出现fatal: Unable to read current working directory: No such file or directory
-		- 就说明这个目录已经删掉了
-		- 不如切换到root 目录下
+如果出现fatal: Unable to read current working directory: No such file or directory
+就说明这个目录已经删掉了
+不如切换到root 目录下
 ```
 cd /root
 ```
 
 
 
-  - 然后再重新执行
+然后再重新执行
 ```
 git clone https://github.com/JeannieStudio/Programming.git /usr/wwwroot
 ```
-- 浏览器访问一下伪装网站（不粘贴近服务器）
-- 复制到浏览器打开试试
+浏览器访问一下伪装网站（不粘贴近服务器）
+复制到浏览器打开试试
 ```
 https://我的域名:6443/
 ```
@@ -529,76 +509,66 @@ https://我的域名:6443/
 https://fsfsfs.eu.org:6443/
 ```
 
-- 域名：6443
-		- 6443是前面设置的nginx的监听端口
-	- 如果页面打不开
-		- ![image.png](../assets/image_1630129165497_0.png)
-		-
--
--
--
--
--
--
--
--
--
--
--
--
--
--
+域名：6443
+6443是前面设置的nginx的监听端口
+如果页面打不开
+
+
+
+
+
 # 安装服务器上的v2ray
-- 用官方快速安装脚本，地址：https://github.com/v2fly/fhs-install-v2ray
+用官方快速安装脚本，地址：https://github.com/v2fly/fhs-install-v2ray
 #### 安装cURL
-- 如果是debian或ubuntu系统:
-	-
-	``` 
-	apt install curl
-	
-	```
-	 - 如果出现pt: command not found 就是pt命令没安装
+如果是debian或ubuntu系统:
+``` 
+apt install curl
+```
+	 如果出现pt: command not found 就是pt命令没安装
 ```
 apt install pt
 ```
 
-- 如果是centOS系统：
+如果是centOS系统：
+
 ```
 yum makecache
 ```
 
+0
 ```
 yum install curl
 ```
 
 ##### 使用v2fly网站上的一键脚本下载并安装v2ray 安裝最新發行的 geoip.dat 和 geosite.dat
 
-- 打开网页
-		- https://github.com/v2fly/fhs-install-v2ray
-	- 从网页上复制的代码下来
-	- 安裝和更新 V2Ray
-	``` 
-	bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh)
-	```
-	- 安裝最新發行的 geoip.dat 和 geosite.dat
-	```
-	bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-dat-release.sh)
-	```
-	- ![image.png](../assets/image_1630129181732_0.png)
-	-
-		-
-		-
-		-
-		-
-		- 如果安装失败可以试试 其他操作 移除 V2Ray
+打开网页
+https://github.com/v2fly/fhs-install-v2ray
+从网页上复制的代码下来
+安裝和更新 V2Ray
+
+
+``` 
+bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh)
+```
+
+安裝最新發行的 geoip.dat 和 geosite.dat
+```
+bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-dat-release.sh)
+```
+
+ 
+ 
+ 如果安装失败可以试试 其他操作 移除 V2Ray
+
 ``` 
 bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh) --remove
 ```
 
 
 #### 创建v2ray.service后台服务文件并修改
-- jennie的图文教程链接
-	- https://jeanniestudio.top/2020/08/24/%E6%89%8B%E5%8A%A8%E6%90%AD%E5%BB%BAvless+tcp+tls/
+jennie的图文教程链接
+https://jeanniestudio.top/2020/08/24/%E6%89%8B%E5%8A%A8%E6%90%AD%E5%BB%BAvless+tcp+tls/
 
 
 手动创建
@@ -653,24 +623,24 @@ Restart=on-failure
 WantedBy=multi-user.target  
 EOF
 ```
-- 配置v2ray
+配置v2ray
 
 #### 生成uuid
 ```
 cat /proc/sys/kernel/random/uuid 
 ```
-- 把uuid记下来
+把uuid记下来
 或者不生成了，每次都用一样的，例如
 ```
 f9fa4886-23dc-4e2b-9b78-23b8a3324236
 ```
 	
 #### 配置v2ray服务器：创建config. json文件并配置
-- 下载官方给的配置即可：https://github.com/v2fly/v2ray-examples
-	- 找到VLESS-TCP-TLS (maximal by rprx)这个版本点击进去
-	- 这里官方给出了三个配置文件
-	- 因为nginx已经配置好了，我们点击打开config_server.json的配置
-		- 复制过来 修改红色标注的地方 删除中文注释 （注意前面设置的证书的路径是/data/example.com）
+下载官方给的配置即可：https://github.com/v2fly/v2ray-examples
+找到VLESS-TCP-TLS (maximal by rprx)这个版本点击进去
+这里官方给出了三个配置文件
+因为nginx已经配置好了，我们点击打开config_server.json的配置
+复制过来 修改红色标注的地方 删除中文注释 （注意前面设置的证书的路径是/data/example.com）
 
 ###### 创建config. json文件
 在/usr/local/etc/v2ray/文件夹下创建config. json文件
@@ -922,41 +892,28 @@ EOF
 ```
 
 
-- 证书的绝对路径在这里
-	-
-	- ![image.png](../assets/image_1630129200129_0.png)
--
--
-	- ctril c退出
--
--
--
--
--
--
--
--
--
--
--
-- 如果你不放心可以看一下是否保存成功了
+证书的绝对路径在这里
+
+ctril c退出
+
+如果你不放心可以看一下是否保存成功了
 ```
 cat /usr/local/ect/v2ray/config. json
 
 ```
 
 
- - 如果没成功说明 cat 命令
-- 如果没成功就找到这个文件双击打开 cat /usr/local/ect/v2ray/config.json
+如果没成功说明 cat 命令
+如果没成功就找到这个文件双击打开 cat /usr/local/ect/v2ray/config.json
 
 
 
-- 把上面代码复制进去
-	- ![image.png](../assets/image_1630129215228_0.png){:height 705, :width 587}
-	-
--
+把上面代码复制进去
+
+
 ## 启动vray
 #### 启动 v2ray
+
 ```
 systemctl daemon-reload
 ```
@@ -979,14 +936,14 @@ systemctl status v2ray
 
 
 	
-- 其他命令
+其他命令
 
 ```
 systemctl enable v2ray
 ```
 
 
-  - 其他相关命令（现在不用）：
+其他相关命令（现在不用）：
 
 启动v2ray命令是
 ```
