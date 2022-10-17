@@ -59,11 +59,9 @@ sudo -i
   - https://blog.csdn.net/hello_1995/article/details/109222650
 ## 2.安装依赖，
 如果是debian或ubuntu系统则执行：
-
-
-
 ```
 apt-get update && apt-get -y install socat
+
 ```
 
 
@@ -73,7 +71,7 @@ yum update && yum -y install socat
 ```
 
 
-用安装acme脚本申请证书套路
+- 用安装acme脚本申请证书套路
 # 用[acme.sh安装证书套路](acme.sh安装证书套路.md)
 
 # 用[复制转换证书套路](复制转换证书套路.md)
@@ -132,18 +130,16 @@ tar -zxvf /usr/local/src/openssl-1.1.1.tar.gz -C /usr/local/src
 apt -y install build-essential libpcre3 libpcre3-dev zlib1g-dev git dbus manpages-dev aptitude g++
 ```
 
-如果是centos执行：
-
-
-
-
+- 如果是centos执行：
 ```
 yum -y groupinstall "Development tools"
+
 ```
 
 
 ```
 yum -y install pcre pcre-devel zlib-devel epel-release gcc gcc-c++
+
 ```
 
 
@@ -984,6 +980,10 @@ systemctl start v2ray
  systemctl stop v2ray
  ```
 
+下一步是
+# [[vless加上cdn的正确操作方法]]
+
+下一步是
 # windows的Qvray客户端下载和配置套路
 - 1.win平台：
 下载Qv2ray，使用手册：这里：https://qv2ray.net/getting-started/
@@ -1116,7 +1116,7 @@ path填
 
 
 
-
+# [[长期不用时故障排除]]
 
 
 -
