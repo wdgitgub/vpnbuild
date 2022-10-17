@@ -981,7 +981,7 @@ systemctl start v2ray
  ```
 
 下一步是
-# [[vless加上cdn的正确操作方法]]
+# [vless加上cdn的正确操作方法](vless加上cdn的正确操作方法.md)
 
 下一步是
 # windows的Qvray客户端下载和配置套路
@@ -1116,7 +1116,7 @@ path填
 
 
 
-# [[长期不用时故障排除]]
+# [长期不用时故障排除](长期不用时故障排除.md)
 
 
 -
