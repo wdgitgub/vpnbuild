@@ -70,14 +70,12 @@ apt-get update && apt-get -y install socat
 ```
 
 
+0
 
 
 
 
-
-如果是centos系统则执行：
-
-
+如果是centos系统则执行
 
 ```
 yum update && yum -y install socat
