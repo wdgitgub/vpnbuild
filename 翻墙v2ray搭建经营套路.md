@@ -9,3 +9,5 @@
 - [服务器安装v2ray绕路6，vless套路（高级版不容易被墙](服务器安装v2ray绕路6，vless套路（高级版不容易被墙.md)
 - [服务器安装v2ray绕路7，vless套路（高级版不容易被墙](服务器安装v2ray绕路7，vless套路（高级版不容易被墙.md)
 - [XRay搭建 正在用](XRay搭建%20正在用.md)
+- [vless+ws+cdn套路](vless+ws+cdn套路.md)
+- [vless+ws+cdn套路2](vless+ws+cdn套路2.md)
